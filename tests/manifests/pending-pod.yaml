@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubedoctor-pending-test
+  namespace: default
+spec:
+  nodeSelector:
+    kubedoctor-test-node: "does-not-exist"
+  containers:
+    - name: test
+      image: nginx:alpine
